@@ -1,0 +1,53 @@
+The Headmaster is very angry on students, as she conducted a class test,she checks the marks of every student.
+
+"such that if any student has a score equal to zero than, she orders "that student who scored zero and the student who checked his marks before him" should move out of the class".
+
+So as per school norms, she need to submit the sum of the scores of the people who are in the class. 
+
+Input :
+
+First line T refers to no of testcases .
+
+For each testcase there will we 2 lines on first line N refers number of the students in the class.
+
+Next line give the marks of all the students in the class.
+
+Output:
+
+single line giving sum of all the marks of students in the  after verification.if sum seems to be larger then print sum%10^8
+
+constraints:
+
+1<=t<=100
+
+1<=n<=100
+
+1<=a[i]<=10000
+
+
+
+
+program::
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	long int n, tc;
+	cin >> tc;
+	while (tc--)
+	{
+		long long int i, sum = 0, temp = 0, l;
+		cin >> n;
+		for (i = 0; i<n; i++)
+		{
+			cin >> l;
+			if (l != 0)
+				sum = sum + temp;
+			temp = l;
+		}
+		cout << sum + temp << endl;
+	}
+}
