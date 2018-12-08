@@ -1,0 +1,89 @@
+Moses goes to Church every sunday. One such sunday there was an issue at the Church and Moses was the only one who can solve the problem. Moses goes to church on his bike, but during his journey towards the church his bike got pucntured. So Moses asks for a lift to all the people that travel on that road but he fails. Ater a long time a Drunkard gave moses lift. But the problem is the drunkard drives awkwardly
+
+The drunkard moves A meters forward and B meters backward,like wise he will move for k  times,but moses requests him to move k+1 times.
+
+The issue got serious at the Church and Moses need to know if he can reach the church on time or not on the drunkards bike.
+
+Your task is to say whether Moses-The Problem Solver will reach the church and solve the problem in time or not.
+
+Note:
+
+Caluclate the distance for k times(say u) the distance for k+1 times(say y).
+
+If u or y is negative then print "MOSES CANNOT REACH".
+
+If no of binary 1"s in u and y are equal then print "MOSES MAY REACH"
+
+else print MOSES REACHED.
+
+
+
+
+
+Input:
+
+first line consists of no of testcases (t)
+
+next line t lines consists a,b,k seperated with spaces
+
+Output:
+
+
+
+Constraints:
+
+1<=t<=10000
+
+1<=a<=1000000
+
+1<=b<=1000000
+
+1<=k<=10000
+
+
+
+program:::
+
+
+/*MOSES PROBLEM*/
+#include<iostream>
+using namespace std;
+int no(long int);
+int main()
+{
+   long int a,b,k,t,l,u,test;
+   cin>>test;
+   while(test--)
+   {
+    cin>>a>>b>>k;
+    if(b>a)
+        cout<<"MOSES CANNOT REACH"<<endl;
+    else
+    {
+    if(k%2==1)
+       t=(k/2)+1;
+    else
+        t=k/2;
+    u=(a*t)-(b*(k-t));
+    if(k%2==1)
+        l=u-b;
+    else
+        l=u+a;
+    if(no(u)==no(l))
+        cout<<"MOSES MAY REACH"<<endl;
+    else
+        cout<<"MOSES REACHED"<<endl;
+    }
+   }
+}
+int no(long int p)
+{
+    int c=0;
+    while(p)
+    {
+        if(p%2==1)
+            c++;
+        p=p/2;
+    }
+    return c;
+}
