@@ -1,0 +1,81 @@
+Himalay commonly known as Mr.HackerEarth is very good at coding. But he mostly fails when a program is given to him on strings that too solving them in a specific language. Once he participated in a coding competition in which there were more questions on strings and he had to solve them in that specific language he has trouble with. Himalay is very frustrated with himself and decided to master strings. From that day Himalay started solving problems on strings and Himalay is able to solve many problems on strungs. But he was stuck at one particualr problem.The problem is:
+
+Given a array of numbers. The array s is special because each ith index of the array contains i characters except for the last index.The task is to print the block of the array at the given location i.
+
+if no such index or block present print -1
+
+Example:
+
+1 2 3 4 5 6 7 8
+
+1st index - 1
+
+2nd indec - 2 3
+
+3rd index - 4 5 6
+
+Help Mr.HackerEarth.
+
+Input Format:
+
+first line consists of no of testcases(t)
+
+for each test case there will be 3 lines 
+
+first line gives no of elements in the array(n)
+
+next line gives block number(b)
+
+next line gives all the numbers in the array(a[i])
+
+Output:
+
+print the elements in the given block with spaces
+
+Constraints:
+
+1<=t<=1000
+
+1<=n<=5050
+
+1<=b<=200
+
+1<=a[i]<=10000000
+
+
+
+program::
+
+#include <iostream>
+#include<stdlib.h>
+using namespace std;
+int main()
+{
+  long int tc;
+  cin>>tc;
+  while(tc--)
+  {
+      long int* a;
+      int c,k,i,s,n;
+      cin>>c>>n;
+      a=(long int*)malloc(c*sizeof(long int));
+      for(i=0;i<c;i++)
+        cin>>a[i];
+      s=((n-1)*(n))/2;
+      if(s>=c)
+      {
+        cout<<"-1"<<endl;
+      }
+    else
+    {
+      for(i=s;i<s+n;i++)
+      {
+          if(i>=c)
+            break;
+        cout<<a[i]<<" ";
+      }
+      cout<<endl;
+    }
+  }
+}
+
