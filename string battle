@@ -1,0 +1,60 @@
+Kranthi was fighting a lone battle with the Stiring-Army. Although  we fought with courage we was losing the battle slowly.
+
+By seeing the courage possesed by kranthi,the String king makes a treaty with kranthi by saying.
+
+"If you solve this question you wii be set free...... and he contiues by saying.
+
+Add the indexes of the string, if the same character appears again then multiply that patricular index with that character, if that product is high than apply mod 10.
+
+Note: the string indexes always start with 1.
+
+Input Format:
+
+first line consists of no of testcases(t)
+
+next t lines consists of string containing only digits.
+
+ output Format:
+
+
+print sum in a new line
+
+Constraints:
+
+1<=t<=100
+
+1<=strlen<=10000
+
+program::
+
+#include <iostream>
+#include<stdlib.h>
+using namespace std;
+
+int main()
+{
+    int tc;
+    cin>>tc;
+    while(tc--)
+    {
+    char *s;
+    int a[10]={0},sum=0,x;
+    int i=0;
+    s=(char*)malloc(1000*sizeof(char));
+    cin>>s;
+    while(s[i]!='\0')
+    {
+        int x;
+        x=s[i]-'0';
+        if(a[x])
+            sum=sum+((x*(i+1))%10);
+        else
+           {
+               a[x]=1;
+               sum=sum+x;
+           }
+           i++;
+    }
+    cout<<sum<<endl;
+   }
+}
